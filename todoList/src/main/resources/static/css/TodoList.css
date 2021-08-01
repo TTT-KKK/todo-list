@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+/* body共通 */
+body{
+	width: auto;
+	height: auto;
+	margin: 0px;
+	background:#FFF ;
+	font-family: "メイリオ", "ＭＳＰゴシック", sans-serif;
+}
+
+
+/* >>>>>>>>> header >>>>>>>>> */
+header{
+	margin: 0px;
+	height: 80px;
+	background-color: rgb(152, 167, 247);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#header-left{
+	width: 25%;
+	background-color: coral;
+
+}
+#header-center{
+	width: 50%;
+	text-align: center;
+
+}
+h1{
+	text-align: center;
+
+}
+
+#header-right{
+	width: 25%;
+	text-align: right;
+
+}
+
+.task-entry-btn{
+	display: inline;
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+	position: relative;
+	right: 20%;
+}
+
+
+/* <<<<<<<<< header <<<<<<<<< */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* >>>>>>>>> wrapper >>>>>>>>> */
+#main-wrapper{
+	margin: 15px 10%;
+	width: auto;
+	height: auto;
+}
+table{
+	border-collapse:collapse;
+	table-layout: fixed;
+	width: 100%;
+}
+
+#table-heading{
+	width: auto;
+	border-bottom: 1px solid gray;
+	height: 45px;
+}
+
+
+
+#done-btn-heading{
+width: 3%;
+}
+
+#tsk-name-heading{
+	width: 60%;
+}
+
+#completion-date-heading{
+	width: 22%;
+}
+
+#priority-heading{
+	width: 15%;
+}
+
+.th-ali-left{
+	text-align: left;
+}
+
+.td-ali-center{
+	text-align: center;
+}
+/* <<<<<<<<< wrapper <<<<<<<<< */
+
+
