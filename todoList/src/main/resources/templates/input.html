@@ -6,9 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link th:href="@{/css/input.css}" rel="stylesheet" type="text/css">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="webjars/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="webjars/bootstrap/4.6.0/css/bootstrap.min.css" />
+<script src="webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
 <title>input</title>
 </head>
 <body>
@@ -72,11 +73,14 @@
         <button id="task-add">タスクを追加</button>
     </div>
 
-
-
-
-
-
+<span class="badge bg-primary">Primary</span>
+<span class="badge bg-secondary">Secondary</span>
+<span class="badge bg-success">Success</span>
+<span class="badge bg-danger">Danger</span>
+<span class="badge bg-warning text-dark">Warning</span>
+<span class="badge bg-info text-dark">Info</span>
+<span class="badge bg-light text-dark">Light</span>
+<span class="badge bg-dark">Dark</span>
     <!-- <input type="text" id="datepicker"> -->
 
     <script type="text/javascript" th:src="@{/js/input.js}"></script>
