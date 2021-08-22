@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link th:href="@{/css/TodoList.css}" rel="stylesheet" type="text/css">
+<title>Insert title here</title>
+</head>
+<body>
+    <h1 th:text="${value}"></h1>
+
+
+    <header>
+        <div id="header-left">
+            <!-- ヘッダー右側の空要素 -->
+        </div>
+        <div id="header-center">
+            <h1>ToDoリスト</h1>
+        </div>
+        <div id="header-right">
+            <button class="task-entry-btn">＋</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="main-wrapper">
+            <table>
+                <tr id="table-heading">
+                    <th id="done-btn-heading" class="th-ali-center">
+                        <!-- 完了フラグの空要素 -->
+                    </th>
+                    <th id="tsk-name-heading" class="th-ali-left">タスク名</th>
+                    <th id="completion-date-heading" class="th-ali-left">完了日▼</th>
+                    <th id="priority-heading">優先度</th>
+                </tr>
+                <tr id="top-tr">
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>HTML学習1</td>
+                        <td>12/26(土)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>CSS学習1</td>
+                        <td>12/26(土)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>HTML学習2</td>
+                        <td>12/27(日)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>JAVA学習1</td>
+                        <td>12/27(日)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>HTML学習3</td>
+                        <td>12/28(月)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>データベース学習1</td>
+                        <td>12/28(月)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>JAVA学習2</td>
+                        <td>12/28(日)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>HTML学習4</td>
+                        <td>12/29(火)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>データベース学習2</td>
+                        <td>12/29(火)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>データベース学習3</td>
+                        <td>12/30(水)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+            </table>
+        </div>
+        <!--bootstrapテスト-->
+        <span class="badge bg-primary">Primary</span>
+        <span class="badge bg-secondary">Secondary</span>
+        <span class="badge bg-success">Success</span>
+        <span class="badge bg-danger">Danger</span>
+        <span class="badge bg-warning text-dark">Warning</span>
+        <span class="badge bg-info text-dark">Info</span>
+        <span class="badge bg-light text-dark">Light</span>
+        <span class="badge bg-dark">Dark</span>
+        <!--bootstrapテスト-->
+    </main>
+    <script type="text/javascript" th:src="@{/js/S01.js}"></script>
+
+</body>
+</html>
