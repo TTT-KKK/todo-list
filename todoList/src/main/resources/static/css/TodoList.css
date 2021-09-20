@@ -5,11 +5,9 @@ body{
 	width: auto;
 	height: auto;
 	margin: 0px;
-	background:#FFF ;
+	background:FFF ;
 	font-family: "メイリオ", "ＭＳＰゴシック", sans-serif;
 }
-
-
 /* >>>>>>>>> header >>>>>>>>> */
 header{
 	margin: 0px;
@@ -19,18 +17,18 @@ header{
 	justify-content: center;
 	align-items: center;
 }
-#header-left{
+.header-left{
 	width: 25%;
 	background-color: coral;
 }
-#header-center{
+.header-center{
 	width: 50%;
 	text-align: center;
 }
 h1{
 	text-align: center;
 }
-#header-right{
+.header-right{
 	width: 25%;
 	text-align: right;
 }
@@ -45,7 +43,7 @@ h1{
 /* <<<<<<<<< header <<<<<<<<< */
 
 /* >>>>>>>>> wrapper >>>>>>>>> */
-#main-wrapper{
+.main-wrapper{
 	margin: 15px 10%;
 	width: auto;
 	height: auto;
@@ -55,21 +53,21 @@ table{
 	table-layout: fixed;
 	width: 100%;
 }
-#table-heading{
+.table-heading{
 	width: auto;
 	border-bottom: 1px solid gray;
 	height: 45px;
 }
-#done-btn-heading{
+.done-btn-heading{
 width: 3%;
 }
-#tsk-name-heading{
+.tsk-name-heading{
 	width: 60%;
 }
-#completion-date-heading{
+.completion-date-heading{
 	width: 22%;
 }
-#priority-heading{
+.priority-heading{
 	width: 15%;
 }
 .th-ali-left{
@@ -99,13 +97,13 @@ width: 3%;
 .task-name-entry{
 	margin-left: 30px;
 }
-#task-name{
+.task-name{
 	display: flex;
 }
-#task-name p{
+.task-name p{
 	width: 80px;
 }
-#task-name-box{
+.task-name-box{
 	height: 30px;
 	width: 75%;
 	font-size: 20px;
@@ -116,13 +114,13 @@ width: 3%;
 	margin-left: 30px;
     margin-top: 20px;
 }
-#completion-date-inline{
+.completion-date-inline{
 	display: flex;
 }
-#completion-date-inline p{
+.completion-date-inline p{
 	width: 80px;
 }
-#task-completion-date-box{
+.task-completion-date-box{
 	height: 70px;
 	width: 35%;
 	font-size: 30px;
@@ -135,13 +133,13 @@ width: 3%;
 	margin-left: 30px;
     margin-top: 20px;
 }
-#priority-inline{
+.priority-inline{
 	display: flex;
 }
-#priority-inline p{
+.priority-inline p{
 	width: 80px;
 }
-#priority-high span{
+.priority-high span{
     color: red;
 }
 /*タスクメモ*/
@@ -152,7 +150,7 @@ width: 3%;
 .task-memo p{
     margin-bottom: 0px;
 }
-#task-memo-box{
+.task-memo-box{
 	border-radius: 10px;
 	vertical-align: top;
 	font-size: 15px;
@@ -166,7 +164,7 @@ width: 3%;
     color:    rgb(207, 204, 204);
 }
 /*タスク追加ボタン*/
-#task-add{
+.task-add{
 	margin-left: 30px;
 	margin-top: 20px;
 	background-color: rgba(157, 191, 243, 0.747);
@@ -190,13 +188,13 @@ width: 3%;
 .task-name-entry{
 	margin-left: 30px;
 }
-#task-name{
+.task-name{
 	display: flex;
 }
-#task-name p{
+.task-name p{
 	width: 80px;
 }
-#task-name-box{
+.task-name-box{
 	height: 30px;
 	/* width: 850px; */
 	width: 75%;
@@ -206,13 +204,13 @@ width: 3%;
 .completion-date{
 	margin-left: 30px;
 }
-#completion-date-inline{
+.completion-date-inline{
 	display: flex;
 }
-#completion-date-inline p{
+.completion-date-inline p{
 	width: 80px;
 }
-#task-completion-date-box{
+.task-completion-date-box{
 	height: 70px;
 	width: 35%;
 	font-size: 30px;
@@ -224,20 +222,20 @@ width: 3%;
 .priority{
 	margin-left: 30px;
 }
-#priority-inline{
+.priority-inline{
 	display: flex;
 }
-#priority-inline p{
+.priority-inline p{
 	width: 80px;
 }
-#priority-high span{
+.priority-high span{
     color: red;
 }
 /*タスクメモ*/
 .task-memo{
 	margin-left: 30px;
 }
-#task-memo-box{
+.task-memo-box{
 	border-radius: 10px;
 	vertical-align: top;
 	font-size: 15px;
@@ -251,7 +249,7 @@ width: 3%;
     color:    rgb(207, 204, 204);
 }
 /*タスク追加ボタン*/
-#task-add{
+.task-add{
 	margin-left: 30px;
 	margin-top: 20px;
 	background-color: rgba(157, 191, 243, 0.747);
