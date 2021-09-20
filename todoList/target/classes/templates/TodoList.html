@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link th:href="@{/css/TodoList.css}" rel="stylesheet" type="text/css">
+<title>Insert title here</title>
+</head>
+<body>
+    <h1 th:text="${value}"></h1>
+
+
+    <header>
+        <div id="header-left">
+            <!-- ヘッダー右側の空要素 -->
+        </div>
+        <div id="header-center">
+            <h1>ToDoリスト</h1>
+        </div>
+        <div id="header-right">
+            <button class="task-entry-btn">＋</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="main-wrapper">
+            <table>
+                <tr id="table-heading">
+                    <th id="done-btn-heading" class="th-ali-center">
+                        <!-- 完了フラグの空要素 -->
+                    </th>
+                    <th id="tsk-name-heading" class="th-ali-left">タスク名</th>
+                    <th id="completion-date-heading" class="th-ali-left">完了日▼</th>
+                    <th id="priority-heading">優先度</th>
+                </tr>
+                <tr id="top-tr">
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>HTML学習1</td>
+                        <td>12/26(土)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>CSS学習1</td>
+                        <td>12/26(土)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>HTML学習2</td>
+                        <td>12/27(日)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>JAVA学習1</td>
+                        <td>12/27(日)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>HTML学習3</td>
+                        <td>12/28(月)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>データベース学習1</td>
+                        <td>12/28(月)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>JAVA学習2</td>
+                        <td>12/28(日)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>HTML学習4</td>
+                        <td>12/29(火)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>データベース学習2</td>
+                        <td>12/29(火)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+                <tr>
+                    <td>
+                        <button>○</button>
+                    </td>
+                    <a href="">
+                        <td>データベース学習3</td>
+                        <td>12/30(水)</td>
+                        <td class="td-ali-center">★</td>
+                    </a>
+                </tr>
+            </table>
+        </div>
+
+<!-- input modal -->
+    <div class="modal-main">
+        <h1>新規登録</h1>
+        <!-- タスク名 -->
+        <div class="task-name-entry">
+            <div id="task-name">
+                <p>タスク名</p>
+                <p class="essential">必須</p>
+            </div>
+            <input type="text" id="task-name-box" placeholder="例) 英語学習">
+        </div>
+        <!-- 完了日 -->
+        <div class="completion-date">
+            <div id="completion-date-inline">
+                <p>完了日</p>
+                <p class="essential">必須</p>
+            </div>
+            <input type="date"  value="2018-01-11" id="task-completion-date-box">
+        </div>
+        <!-- 優先度 -->
+        <div class="priority">
+            <div id="priority-inline">
+                <p>優先度</p>
+                <p class="essential">必須</p>
+            </div>
+            <div id="task-priority-box">
+                <select name="priority">
+                    <option value="high" id="priority-high"><span>★</span>：高</option>
+                    <option value="medium" id="priority-medium"><span>★</span>：中</option>
+                    <option value="low" id="priority-low"><span>★</span>：低</option>
+                    <option value="undecided" id="priority-undecided">☆：未定</option>
+                </select>
+            </div>
+        </div>
+        <!-- タスクメモ -->
+        <div class="task-memo">
+            <p>タスクメモ</p>
+            <textarea name="" id="task-memo-box" cols="100" rows="6" placeholder="例) 英単語を10個覚える"></textarea>
+            <!-- <input type="text" id="task-memo-box" placeholder="例) 英単語を10個覚える"> -->
+        </div>
+        <button id="task-add">タスクを追加</button>
+    </div>
+<!-- input modal -->
+
+<!-- edit modal -->
+    <div class="modal-main">
+        <h1>編集</h1>
+        <!-- タスク名 -->
+        <div class="task-name-entry">
+            <div id="task-name">
+                <p>タスク名</p>
+                <p class="essential">必須</p>
+            </div>
+            <input type="text" id="task-name-box" placeholder="例) 英語学習">
+        </div>
+        <!-- 完了日 -->
+        <div class="completion-date">
+            <div id="completion-date-inline">
+                <p>完了日</p>
+                <p class="essential">必須</p>
+            </div>
+            <input type="date"  value="2018-01-11" id="task-completion-date-box">
+        </div>
+        <!-- 優先度 -->
+        <div class="priority">
+            <div id="priority-inline">
+                <p>優先度</p>
+                <p class="essential">必須</p>
+            </div>
+            <div id="task-priority-box">
+                <select name="priority">
+                    <option value="high" id="priority-high"><span>★</span>：高</option>
+                    <option value="medium" id="priority-medium"><span>★</span>：中</option>
+                    <option value="low" id="priority-low"><span>★</span>：低</option>
+                    <option value="undecided" id="priority-undecided">☆：未定</option>
+                </select>
+            </div>
+        </div>
+        <!-- タスクメモ -->
+        <div class="task-memo">
+            <p>タスクに関するメモ</p>
+            <textarea name="" id="task-memo-box" cols="100" rows="6" placeholder="例) 英単語を10個覚える"></textarea>
+            <!-- <input type="text" id="task-memo-box" placeholder="例) 英単語を10個覚える"> -->
+        </div>
+        <button id="task-add">タスクを追加</button>
+    </div>
+<!-- edit modal -->
+
+
+
+
+
+
+
+
+    </main>
+    <script type="text/javascript" th:src="@{/js/S01.js}"></script>
+</body>
+</html>
