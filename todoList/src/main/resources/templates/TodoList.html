@@ -2,21 +2,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<script src="webjars/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="webjars/bootstrap/4.6.0/css/bootstrap.min.css" />
+<script src="webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
 <link th:href="@{/css/TodoList.css}" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>ToDoList</title>
 </head>
 <body>
-    <h1 th:text="${value}"></h1>
     <header>
         <div class="header-left">
-            <!-- ヘッダー右側の空要素 -->
+            <!-- ヘッダー左側の空要素 -->
         </div>
         <div class="header-center">
             <h1>ToDoリスト</h1>
         </div>
         <div class="header-right">
-            <button class="task-entry-btn">＋</button>
+            <button type="button" class=task-entry-btn btn btn-primary data-toggle="modal" data-target="#input-modal">＋</button>
         </div>
     </header>
 
@@ -24,11 +25,11 @@
         <div class="main-wrapper">
             <table>
                 <tr class="table-heading">
-                    <th class="done-btn-heading" class="th-ali-center">
+                    <th class=done-btn-heading th-ali-center>
                         <!-- 完了フラグの空要素 -->
                     </th>
-                    <th class="tsk-name-heading" class="th-ali-left">タスク名</th>
-                    <th class="completion-date-heading" class="th-ali-left">完了日▼</th>
+                    <th class=tsk-name-heading th-ali-left >タスク名</th>
+                    <th class=completion-date-heading th-ali-left>完了日▼</th>
                     <th class="priority-heading">優先度</th>
                 </tr>
                 <tr class="top-tr">
@@ -36,9 +37,9 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>HTML学習1</td>
-                        <td>12/26(土)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">HTML学習1</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/26(土)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
                 <tr>
@@ -46,9 +47,9 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>CSS学習1</td>
-                        <td>12/26(土)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">CSS学習1</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/26(土)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
                 <tr>
@@ -56,9 +57,9 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>HTML学習2</td>
-                        <td>12/27(日)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">HTML学習2</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/27(日)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
                 <tr>
@@ -66,9 +67,9 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>JAVA学習1</td>
-                        <td>12/27(日)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">JAVA学習1</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/27(日)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
                 <tr>
@@ -76,9 +77,9 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>HTML学習3</td>
-                        <td>12/28(月)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">HTML学習3</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/28(月)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
                 <tr>
@@ -86,9 +87,9 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>データベース学習1</td>
-                        <td>12/28(月)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">データベース学習1</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/28(月)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
                 <tr>
@@ -96,9 +97,9 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>JAVA学習2</td>
-                        <td>12/28(日)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">JAVA学習2</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/28(日)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
                 <tr>
@@ -106,9 +107,9 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>HTML学習4</td>
-                        <td>12/29(火)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">HTML学習4</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/29(火)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
                 <tr>
@@ -116,9 +117,9 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>データベース学習2</td>
-                        <td>12/29(火)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">データベース学習2</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/29(火)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
                 <tr>
@@ -126,110 +127,140 @@
                         <button>○</button>
                     </td>
                     <a href="">
-                        <td>データベース学習3</td>
-                        <td>12/30(水)</td>
-                        <td class="td-ali-center">★</td>
+                        <td data-toggle="modal" data-target="#edit-modal">データベース学習3</td>
+                        <td data-toggle="modal" data-target="#edit-modal">12/30(水)</td>
+                        <td class="td-ali-center" data-toggle="modal" data-target="#edit-modal">★</td>
                     </a>
                 </tr>
             </table>
+
+
+            <div class="js-test" id="js-test">JSで色変えたい部分</div>
         </div>
 
-<!-- input modal -->
-    <div class="modal-main">
-        <h1>新規登録</h1>
-        <!-- タスク名 -->
-        <div class="task-name-entry">
-            <div class="task-name">
-                <p>タスク名</p>
-                <p class="essential">必須</p>
-            </div>
-            <input type="text" class="task-name-box" placeholder="例) 英語学習">
-        </div>
-        <!-- 完了日 -->
-        <div class="completion-date">
-            <div class="completion-date-inline">
-                <p>完了日</p>
-                <p class="essential">必須</p>
-            </div>
-            <input type="date"  value="2018-01-11" class="task-completion-date-box">
-        </div>
-        <!-- 優先度 -->
-        <div class="priority">
-            <div class="priority-inline">
-                <p>優先度</p>
-                <p class="essential">必須</p>
-            </div>
-            <div class="task-priority-box">
-                <select name="priority">
-                    <option value="high" class="priority-high"><span>★</span>：高</option>
-                    <option value="medium" class="priority-medium"><span>★</span>：中</option>
-                    <option value="low" class="priority-low"><span>★</span>：低</option>
-                    <option value="undecclassed" class="priority-undecclassed">☆：未定</option>
-                </select>
-            </div>
-        </div>
-        <!-- タスクメモ -->
-        <div class="task-memo">
-            <p>タスクメモ</p>
-            <textarea name="" class="task-memo-box" cols="100" rows="6" placeholder="例) 英単語を10個覚える"></textarea>
-            <!-- <input type="text" class="task-memo-box" placeholder="例) 英単語を10個覚える"> -->
-        </div>
-        <button class="task-add">タスクを追加</button>
-    </div>
-<!-- input modal -->
 
-<!-- edit modal -->
-    <div class="modal-main">
-        <h1>編集</h1>
-        <!-- タスク名 -->
-        <div class="task-name-entry">
-            <div class="task-name">
-                <p>タスク名</p>
-                <p class="essential">必須</p>
-            </div>
-            <input type="text" class="task-name-box" placeholder="例) 英語学習">
-        </div>
-        <!-- 完了日 -->
-        <div class="completion-date">
-            <div class="completion-date-inline">
-                <p>完了日</p>
-                <p class="essential">必須</p>
-            </div>
-            <input type="date"  value="2018-01-11" class="task-completion-date-box">
-        </div>
-        <!-- 優先度 -->
-        <div class="priority">
-            <div class="priority-inline">
-                <p>優先度</p>
-                <p class="essential">必須</p>
-            </div>
-            <div class="task-priority-box">
-                <select name="priority">
-                    <option value="high" class="priority-high"><span>★</span>：高</option>
-                    <option value="medium" class="priority-medium"><span>★</span>：中</option>
-                    <option value="low" class="priority-low"><span>★</span>：低</option>
-                    <option value="undecclassed" class="priority-undecclassed">☆：未定</option>
-                </select>
+
+        <!-- input-modal -->
+        <div class="modal fade" id="input-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLongTitle">新規登録</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <!-- タスク名 -->
+                    <div class="task-name-entry">
+                        <div class="task-name">
+                            <p>タスク名</p>
+                            <p class="essential">必須</p>
+                        </div>
+                        <input type="text" class="task-name-box" placeholder="例) 英語学習">
+                    </div>
+                    <!-- 完了日 -->
+                    <div class="completion-date">
+                        <div class="completion-date-inline">
+                            <p>完了日</p>
+                            <p class="essential">必須</p>
+                        </div>
+                        <input type="date" class="task-completion-date-box" name="today" id="input-today">
+                    </div>
+                    <!-- 優先度 -->
+                    <div class="priority">
+                        <div class="priority-inline">
+                            <p>優先度</p>
+                            <p class="essential">必須</p>
+                        </div>
+                        <div class="task-priority-box">
+                            <select name="priority">
+                                <option value="high" class="priority-high"><span>★</span>：高</option>
+                                <option value="medium" class="priority-medium"><span>★</span>：中</option>
+                                <option value="low" class="priority-low"><span>★</span>：低</option>
+                                <option value="undecclassed" class="priority-undecclassed">☆：未定</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- タスクメモ -->
+                    <div class="task-memo">
+                        <p>タスクメモ</p>
+                        <textarea name="" class="task-memo-box" cols="100" rows="6" placeholder="例) 英単語を10個覚える"></textarea>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">タスクを追加</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- タスクメモ -->
-        <div class="task-memo">
-            <p>タスクに関するメモ</p>
-            <textarea name="" class="task-memo-box" cols="100" rows="6" placeholder="例) 英単語を10個覚える"></textarea>
-            <!-- <input type="text" class="task-memo-box" placeholder="例) 英単語を10個覚える"> -->
+        <!-- input-modal -->
+
+
+
+
+        <!-- edit-Modal -->
+        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">タスク編集</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <!-- タスク名 -->
+                    <div class="task-name-entry">
+                        <div class="task-name">
+                            <p>タスク名</p>
+                            <p class="essential">必須</p>
+                        </div>
+                        <input type="text" class="task-name-box" placeholder="例) 英語学習">
+                    </div>
+                    <!-- 完了日 -->
+                    <div class="completion-date">
+                        <div class="completion-date-inline">
+                            <p>完了日</p>
+                            <p class="essential">必須</p>
+                        </div>
+                        <input type="date" class="task-completion-date-box" name="today" id="edit-today">
+                    </div>
+                    <!-- 優先度 -->
+                    <div class="priority">
+                        <div class="priority-inline">
+                            <p>優先度</p>
+                            <p class="essential">必須</p>
+                        </div>
+
+                        <div class="task-priority-box">
+                            <select name="priority">
+                                <option value="high" class="priority-high" id="ster">★：高</option>
+                                <option value="medium" class="priority-medium"><span>★</span>：中</option>
+                                <option value="low" class="priority-low"><span>★</span>：低</option>
+                                <option value="undecclassed" class="priority-undecclassed">☆：未定</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="img-test">
+                        <table class="imitationSelect" id="sel2">
+                        </table>
+                    </div>
+                    <!-- タスクメモ -->
+                    <div class="task-memo">
+                        <p>タスクに関するメモ</p>
+                        <textarea name="" class="task-memo-box" cols="100" rows="6" placeholder="例) 英単語を10個覚える"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">タスク内容を更新</button>
+                </div>
+            </div>
         </div>
-        <button class="task-add">タスクを追加</button>
-    </div>
-<!-- edit modal -->
-
-
-
-
-
-
-
-
     </main>
-    <script type="text/javascript" th:src="@{/js/S01.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/TodoList.js}"></script>
 </body>
 </html>
+
+

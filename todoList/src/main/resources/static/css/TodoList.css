@@ -5,7 +5,7 @@ body{
 	width: auto;
 	height: auto;
 	margin: 0px;
-	background:FFF ;
+	background:#FFF ;
 	font-family: "メイリオ", "ＭＳＰゴシック", sans-serif;
 }
 /* >>>>>>>>> header >>>>>>>>> */
@@ -19,11 +19,9 @@ header{
 }
 .header-left{
 	width: 25%;
-	background-color: coral;
 }
 .header-center{
 	width: 50%;
-	text-align: center;
 }
 h1{
 	text-align: center;
@@ -37,8 +35,8 @@ h1{
 	border-radius: 50%;
 	width: 45px;
 	height: 45px;
-	position: relative;
-	right: 20%;
+	position: relative; /*タスク登録ボタンの位置微調整*/
+	right: 20%; /*タスク登録ボタンの位置微調整*/
 }
 /* <<<<<<<<< header <<<<<<<<< */
 
@@ -49,17 +47,23 @@ h1{
 	height: auto;
 }
 table{
-	border-collapse:collapse;
+	border-collapse:collapse;/* ボーダーの表示形式 */
 	table-layout: fixed;
 	width: 100%;
+}
+
+/* テーブルセルの間隔調整 */
+td{
+	padding: 10px 0px;
 }
 .table-heading{
 	width: auto;
 	border-bottom: 1px solid gray;
 	height: 45px;
+	padding: 0 0 50px 0;
 }
 .done-btn-heading{
-width: 3%;
+	width: 3%;
 }
 .tsk-name-heading{
 	width: 60%;
@@ -69,6 +73,7 @@ width: 3%;
 }
 .priority-heading{
 	width: 15%;
+	text-align: center;
 }
 .th-ali-left{
 	text-align: left;
@@ -76,39 +81,42 @@ width: 3%;
 .td-ali-center{
 	text-align: center;
 }
+td{
+	cursor: pointer;
+}
 /* <<<<<<<<< wrapper <<<<<<<<< */
 
 
 
 
-
-
-/* <<<<<<<<< input-modal <<<<<<<<< */
-/*共通*/
+/* <<<<<<<<< input-modal、edit-modal共通 <<<<<<<<< */
 /*必須*/
 .essential{
 	background-color: red;
 	color: white;
 	border-radius: 5px;
-	width: 30px;
 	text-align: center;
 }
+
 /*タスク名*/
 .task-name-entry{
 	margin-left: 30px;
 }
+
 .task-name{
 	display: flex;
 }
+
 .task-name p{
 	width: 80px;
 }
 .task-name-box{
 	height: 30px;
-	width: 75%;
+	width: 100%;
 	font-size: 20px;
     border-radius: 5px;
 }
+
 /*完了日*/
 .completion-date{
 	margin-left: 30px;
@@ -122,7 +130,7 @@ width: 3%;
 }
 .task-completion-date-box{
 	height: 70px;
-	width: 35%;
+	width: 75%;
 	font-size: 30px;
     color: rgb(214, 214, 214);
     border: 2px solid rgb(214, 214, 214);
@@ -172,88 +180,71 @@ width: 3%;
     width: 140px;
     letter-spacing:2px;
 }
-/* <<<<<<<<< input-modal <<<<<<<<< */
+/* タスク追加と編集ボタンを左寄せ */
+.modal-footer{
+	justify-content : left;
+	margin-left: 30px;
+}
 
-/* <<<<<<<<< edit-modal <<<<<<<<< */
-/*共通*/
-/*必須*/
-.essential{
-	background-color: red;
+/* <<<<<<<<< input-modal、edit-modal共通 <<<<<<<<< */
+
+
+
+/* <<<<<<<<< select要素内に画像を挿入する<<<<<<<<< */
+
+/* table SELECTモドキ */
+table.imitationSelect, table.imitationPulldown {
+	table-layout: fixed;
+	border: 1px solid black;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 3px;
+	overflow: hidden;
+	background: #e8e8e8;
+	color: black;
+	line-height: 0px; /* これを入れないと、下に隙間が出来る場合がある */
+	cursor: pointer;
+}
+/* table (1行表示用) */
+table.imitationSelect {
+	position: relative;
+	overflow: visible;    /* プルダウンをハミ出させる(tableの規定値は hidden なので) */
+	z-index: 10;
+}
+/* table (プルダウン用) */
+table.imitationPulldown {
+	position: absolute;
+	z-index: 12;
+	left: -1px; top: -1px;  /* border サイズ分を引く */
+}
+
+/* tr (1行表示用) */
+table.imitationSelect tr {
+	height: 16px;   /* 画像.height + 2 (borderの分を足す) */
+	font-size: 11px;  /* 画像.height - 3 */
+}
+/* tr (プルダウン用) */
+table.imitationPulldown tr {
+	height: 30px; /* タップしやすいように広げる */
+	font-size: 13px;  /* 文字も大きく */
+}
+table.imitationPulldown tr:nth-child(2n) {
+	background: #d8d8d8;  /* 偶数行の背景色 */
+}
+table.imitationPulldown tr:hover {
+	background: #808080;  /* hover時 */
 	color: white;
-	border-radius: 5px;
-	width: 30px;
-	text-align: center;
-}
-/*タスク名*/
-.task-name-entry{
-	margin-left: 30px;
-}
-.task-name{
-	display: flex;
-}
-.task-name p{
-	width: 80px;
-}
-.task-name-box{
-	height: 30px;
-	/* width: 850px; */
-	width: 75%;
-	font-size: 20px;
-}
-/*完了日*/
-.completion-date{
-	margin-left: 30px;
-}
-.completion-date-inline{
-	display: flex;
-}
-.completion-date-inline p{
-	width: 80px;
-}
-.task-completion-date-box{
-	height: 70px;
-	width: 35%;
-	font-size: 30px;
-    color: rgb(214, 214, 214);
-    border: 2px solid rgb(214, 214, 214);
-    border-radius: 10px;
-}
-/*優先度*/
-.priority{
-	margin-left: 30px;
-}
-.priority-inline{
-	display: flex;
-}
-.priority-inline p{
-	width: 80px;
-}
-.priority-high span{
-    color: red;
-}
-/*タスクメモ*/
-.task-memo{
-	margin-left: 30px;
-}
-.task-memo-box{
-	border-radius: 10px;
-	vertical-align: top;
-	font-size: 15px;
-	width: 65%;
-}
-/* テキストエリアの文字色変更 */
-::-webkit-input-placeholder {
-    color:    rgb(207, 204, 204);
-}
-:-moz-placeholder {
-    color:    rgb(207, 204, 204);
-}
-/*タスク追加ボタン*/
-.task-add{
-	margin-left: 30px;
-	margin-top: 20px;
-	background-color: rgba(157, 191, 243, 0.747);
-	border-radius: 5px;
 }
 
-/* <<<<<<<<< edit-modal <<<<<<<<< */
+/* td (共通) */
+table.imitationSelect td, table.imitationPulldown td {
+	vertical-align: middle; /* 縦方向 中央寄せ */
+}
+td.imitationImage {
+	width: 32px;      /* 使われる複数 image の中の最大幅 +α */
+	text-align: center; /* 画像は中央 */
+}
+td.imitationText {
+	text-align: left;   /* 文字は左寄せ */
+}
+
